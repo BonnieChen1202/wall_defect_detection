@@ -1,0 +1,90 @@
+/* ================== 全局字体设置 (新增) ================== */
+/* 强制全局使用楷体，并统一字号，提升高级感 */
+* {
+    font-family: "楷体", "Kaiti", "KaiTi_GB2312", serif;
+    font-size: 16px;
+}
+
+/* ================== 边框排版优化 (修改) ================== */
+/* 优化原本拥挤的 QGroupBox，拉开标题与内部元素的间距 */
+QGroupBox {
+    border: 1px solid #909090; /* 原本的 2px gray 稍微有点粗，改成 1px 细线更优雅 */
+    border-radius: 6px;
+    margin-top: 18px;          /* 关键：给标题留出空间 */
+    padding-top: 15px;         /* 关键：内部元素往下挪，解决拥挤 */
+    padding-bottom: 10px;
+}
+
+/* 控制检测参数、操作等小框框的标题文字 */
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 5px;
+    color: black;
+    font-weight: bold; /* 标题加粗 */
+}
+
+/* ================== 原有按键与背景样式保留 ================== */
+QPushButton#PicBtn,#FilesBtn,#VideoBtn,#CapBtn,#SaveBtn,#ExitBtn {
+    color: black;
+    background-color: rgb(236, 226, 138);
+    border-radius: 6px;
+}
+
+QPushButton#PicBtn:hover,#FilesBtn:hover,#VideoBtn:hover,#CapBtn:hover,#SaveBtn:hover,#ExitBtn:hover {
+    color: red;
+}
+
+QPushButton#PicBtn:pressed,#FilesBtn:pressed,#VideoBtn:pressed,#CapBtn:pressed,#SaveBtn:pressed,#ExitBtn:pressed {
+    background-color: rgb(180,180,180);
+    border: None;
+}
+
+#MainWindow {
+    border-image:url(UIProgram/ui_imgs/IMG_3561.jpg);
+}
+
+QLabel#label_show {
+    border-image:url(UIProgram/ui_imgs/11.png);
+}
+
+/* ================== 强杀 Mac 深色模式保留 ================== */
+
+/* 1. 强制所有普通文字标签为黑色 */
+QLabel {
+    color: black;
+}
+
+/* 2. 强制复选框文字为黑色 */
+QCheckBox {
+    color: black;
+}
+
+/* 3. 强制数字调节框和下拉菜单为白底黑字 */
+QDoubleSpinBox, QComboBox {
+    background-color: white;
+    color: black;
+    border: 1px solid gray;
+}
+
+/* 4. 强制左下角表格主体为白底黑字 */
+QTableWidget {
+    background-color: white;
+    color: black;
+    gridline-color: #d0d0d0;
+}
+
+/* 5. 强制表格的“表头”为浅灰底黑字 */
+QHeaderView::section {
+    background-color: #e4e4e4;
+    color: black;
+    border: 1px solid gray;
+}
+
+/* ================== 主标题 (label_3) 专属放大 ================== */
+QLabel#label_3 {
+    font-size: 34px;      /* 字体放大到 34px，如果还不够大，可以改成 36px 甚至 40px */
+    font-weight: 900;     /* 极度加粗，让标题镇得住场子 */
+    letter-spacing: 3px;  /* 增加字间距，显得更大气 */
+    color: #1A1A1A;       /* 使用深空灰色，比纯黑色更有质感 */
+}

@@ -1,0 +1,22 @@
+# 忽略 PyCharm 配置文件和 Python 缓存
+.idea/
+__pycache__/
+*.pyc
+
+# 忽略大型数据集和本地测试/保存的数据
+datasets/
+save_data/
+缺陷自动保存/
+
+# 忽略模型训练与推理记录
+runs/
+
+# 忽略大型视频测试文件 (保留小图片测试)
+TestFiles/*.mp4
+TestFiles/*.avi
+
+# 忽略大型模型权重文件 (保留模型结构的 Python 源码)
+models/*.pt
+models/*.pth
+models/*.weights
+models/*.onnx
